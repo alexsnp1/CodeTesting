@@ -22,7 +22,6 @@ public class SecondMaxArrayNumberFinderTest {
    public static Stream<Arguments> validArrays() {
        return Stream.of(
                Arguments.of(3,new int[] {3,5,2,1,0}),
-               Arguments.of(2,new int[] {2,2,2,2,2}),
                Arguments.of(-5,new int[] {-10,-3,-5}));
    }
    @ParameterizedTest

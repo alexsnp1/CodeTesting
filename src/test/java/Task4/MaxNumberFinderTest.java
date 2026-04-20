@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,6 +32,10 @@ public class MaxNumberFinderTest {
     @Test
     public void userCanGetExceptionIfArrayIsNull() {
         assertThrows(NullPointerException.class, () -> finder.findMax(null));
+    }
+    @Test
+    public void userCanGetExceptionIfArrayIsEmpty() {
+        assertThrows(NoSuchElementException.class, () -> finder.findMax(new int[] {}));
     }
 
 }

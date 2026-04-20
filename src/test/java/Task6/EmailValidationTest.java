@@ -1,6 +1,7 @@
 package Task6;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -21,8 +22,12 @@ public class EmailValidationTest {
         assertTrue(emailValidation.isValidEmail(email));
     }
     @ParameterizedTest
-    @ValueSource(strings = {"testmail.com", "@mail.ru", "a.b2-3c@.co", "a@test.c", "","null"})
+    @ValueSource(strings = {"testmail.com", "@mail.ru", "a.b2-3c@.co", "a@test.c", ""})
     public void userCanCheckIfEmailIsInValid(String email) {
         assertFalse(emailValidation.isValidEmail(email));
+    }
+    @Test
+    public void userCanCheckIfEmailIsNull() {
+        assertFalse(emailValidation.isValidEmail(null));
     }
 }

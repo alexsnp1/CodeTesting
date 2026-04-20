@@ -26,7 +26,7 @@ public class FactorialCalculatorTest {
         assertEquals(expected,factorialCalculator.factorial(number));
     }
     @Test
-    public void userCanCalculateFactorial() {
+    public void userCanGetExceptionIfNumberIsNegative() {
         assertThrows(IllegalArgumentException.class, () -> factorialCalculator.factorial(-5));
     }
 }
